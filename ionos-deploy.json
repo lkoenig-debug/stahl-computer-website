@@ -1,0 +1,41 @@
+{
+  "name": "stahl-computer-website",
+  "version": "1.0.0",
+  "type": "static",
+  "build": {
+    "command": "npm run build",
+    "output": "dist"
+  },
+  "routes": [
+    {
+      "src": "/contact.php",
+      "dest": "/contact.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_API_URL": ""
+  },
+  "headers": [
+    {
+      "source": "/contact.php",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "POST, GET, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
+        }
+      ]
+    }
+  ]
+}
